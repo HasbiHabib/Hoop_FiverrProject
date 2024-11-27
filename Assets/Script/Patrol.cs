@@ -14,6 +14,8 @@ public class Patrol : MonoBehaviour
 
     private bool OnWalk;                                // trackdown is the player on WalkMode or idleMode
 
+    public Animator ObjectAnimation;                    // Declare what is object that want to animate
+
 
     // when start the scene object will always start on walkmode
     void Start()
@@ -63,6 +65,7 @@ public class Patrol : MonoBehaviour
     // switching to walkmode (with random time between 8 to 10 seconds) then it will auto switch to idle mode
     IEnumerator WalkMode()
     {
+        ObjectAnimation.SetBool("walk", true);                         //Set the animation to walk
         OnWalk = true;
         var RandomWalkTime = Random.Range(8, 10);
         yield return new WaitForSeconds(RandomWalkTime);
@@ -72,6 +75,7 @@ public class Patrol : MonoBehaviour
     // switching to idlemode (with random time between 0.5f to 1 seconds) then it will auto switch to walk mode
     IEnumerator IdleMode()
     {
+        ObjectAnimation.SetBool("walk", false);                       //Set the animation to idle
         OnWalk = false;
         var RandomStayTime = Random.Range(0.5f, 1);
         yield return new WaitForSeconds(RandomStayTime);
