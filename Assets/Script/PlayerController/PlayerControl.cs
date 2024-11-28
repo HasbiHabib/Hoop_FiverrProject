@@ -7,7 +7,7 @@ public class PlayerControl : MonoBehaviour
     public Transform cam;
     public float Speed = 6f;
     public float jumpForce;
-    float turnSmoothTime = 0.05f;
+    float turnSmoothTime = 1f;
     float turnSmoothvelocity;
     float movingSpeed;
 
