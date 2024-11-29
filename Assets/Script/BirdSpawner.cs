@@ -49,7 +49,7 @@ public class BirdSpawner: MonoBehaviour
         thebird.GetComponent<Rigidbody>().linearVelocity = thebird.transform.TransformDirection(Vector3.forward * Speed);
         thebird.SetActive(true);
         // the bird will auto destroy in 10 secods
-        Destroy(thebird, 10);           
+        Destroy(thebird, 25);           
     }
 
 
